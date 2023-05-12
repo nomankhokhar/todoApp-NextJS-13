@@ -2,12 +2,12 @@ import mongoose from "mongoose";
 
 const schema = new  mongoose.Schema({
     title: {
-        name: String,
-        require: true,
+        type: String,
+        required: true,
     },
     description: {
-        name: String,
-        require: true,
+        type: String,
+        required: true,
     },
     isCompleted : {
         type : Boolean,
@@ -15,13 +15,13 @@ const schema = new  mongoose.Schema({
     },
     user : {
         type : mongoose.Schema.Types.ObjectId,
-        require: true,
+        required: true,
         ref : "User"
     },
     createdAt : {
         type : Date,
         default: Date.now,
-    }
+    },
 });
 
 mongoose.models = {};

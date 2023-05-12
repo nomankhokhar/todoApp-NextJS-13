@@ -2,18 +2,18 @@ import mongoose from "mongoose";
 
 const schema = new mongoose.Schema({
   name: {
-    name: String,
-    require: true,
+    type: String,
+    required: true,
   },
   email: {
-    name: String,
+    type: String,
     unique: true,
-    require: true,
+    required: true,
   },
   password: {
-    name: String,
+    type: String,
     select: false,
-    require: true,
+    required: true,
     minLength : [6, "Password to small"],
   },
 });

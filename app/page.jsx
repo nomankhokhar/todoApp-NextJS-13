@@ -9,7 +9,7 @@ const page = () => {
       <Form />
 
       <section className="todosContainer">
-        <TodoItem title={"sample Noman Ali"} id={"sampleid"}
+        <TodoItem title={"1:34:10 / 2:58:03"} id={"sampleid"}
           completed={true}
           description={"I will done this project soon"} />
       </section>
