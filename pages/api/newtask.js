@@ -1,6 +1,6 @@
 import { errorHandler } from "@/middleware/error";
 import { Task } from "@/models/task";
-import { connectDB } from "@/utils/features";
+import { checkAuth, connectDB } from "@/utils/features";
 import { asyncError } from "@/middleware/error";
 
 const handler = asyncError(async (req, res) => {
@@ -8,15 +8,23 @@ const handler = asyncError(async (req, res) => {
 
     if (req.method !== "POST") {
 
-        return errorHandler(res, 400, "Only POST Method not allowed")
+        return errorHandler(res, 400, "Only POST Method not allowed");
     }
 
     const { title, description } = req.body;
 
+    if(!title || !description){
+        return errorHandler(res, 400, "Title and Description are required");
+    }
+
+    const user = await checkAuth(req);
+
+    if (!user)  return errorHandler(res,401, "login required");
+
     await Task.create({
         title: title,
         description: description,
-        user: "5c0a7922c9d89830f4911426",
+        user: user._id,
     })
 
     res.json({
