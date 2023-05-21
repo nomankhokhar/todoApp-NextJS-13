@@ -61,9 +61,6 @@ const page = () => {
   )
 }
 
-export const metadata = {
-  title: 'Register',
-  description: 'this is Register page of todo App',
-}
+
 
 export default page
