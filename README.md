@@ -3,7 +3,7 @@
 ![Project Screenshot](./images/3.png)
 
 
-# This is Company Page Build with HTML5 and SCSS and Lastest NEXT13 using App Router
+# This is TodoApp Build with HTML5 and SCSS and Lastest NEXT13 using App Router
 
 
 1 -> HTML5
